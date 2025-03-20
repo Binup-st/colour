@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-gray-700" />
       <p className="container w-2/3 mx-auto flex justify-center items-center py-5">
-        © 2024 Colours Pvt. Ltd. All rights reserved.
+        © 2025 Colours Pvt. Ltd. All rights reserved.
       </p>
     </div>
   );
