@@ -10,7 +10,13 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function HeroSection() {
   return (
     <div className="relative flex flex-col items-center justify-center w-full h-screen">
-      <Image src={background} alt="background" fill className="object-cover" />
+      <Image
+        src={background}
+        alt="background"
+        fill
+        className="object-cover"
+        priority
+      />
 
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 dark:text-gray-500"></div>
 

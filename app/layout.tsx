@@ -7,10 +7,9 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import { SearchProvider } from "@/context/search-context";
 import { CategoryProvider } from "@/context/category-context";
-import { ThemeProvider } from "@/components/theme-provider";
 import HeroSection from "@/home/hero-section";
 import Footer from "@/components/common/footer";
-// import { ThemeProvider } from "@/components/theme-provider";
+import { ClientThemeProvider } from "@/components/client-theme-provider"; // Import the client-side provider
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -35,27 +34,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${fontSans.variable} ${fontOpenSans.variable} font-open-sans antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <SearchProvider>
-            <CategoryProvider>
+        <SearchProvider>
+          <CategoryProvider>
+            <ClientThemeProvider>
+              {" "}
+              {/* Use the client-side provider */}
               <Header />
               <div className="relative z-1">
                 <HeroSection />
               </div>
               <main className="relative -z-100">{children}</main>
               <Footer />
-            </CategoryProvider>
-          </SearchProvider>
-        </ThemeProvider>
+            </ClientThemeProvider>
+          </CategoryProvider>
+        </SearchProvider>
       </body>
     </html>
   );

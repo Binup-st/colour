@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import gsap from "gsap";
+import Cart from "./cart";
 
 type Product = {
   id: string;
@@ -18,7 +19,6 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const [imgHeight, setImgHeight] = useState(300);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -37,6 +37,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       key={product.id}
       className={`relative border-b border-r border-green-800 dark:border-gray-200 flex flex-col justify-center items-center py-10 h-full`}
     >
+      <Cart />
+
       {/* Product Image */}
       <div className="w-full flex justify-center mb-5">
         <Image
@@ -44,8 +46,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={product.title}
           width={300}
           height={300}
-          style={{ height: `${imgHeight}px`, width: "auto" }}
-          onLoadingComplete={(img) => setImgHeight(img.naturalHeight)}
+          style={{
+            height: "auto",
+            width: "auto",
+            objectFit: "contain",
+          }}
           className="my-2 mt-5 sm:my-10"
         />
       </div>

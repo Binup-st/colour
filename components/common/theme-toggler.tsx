@@ -13,6 +13,8 @@ export default function ThemeToggler() {
   const sunRef = useRef<SVGSVGElement>(null);
 
   useGSAP(() => {
+    if (!moonRef.current || !sunRef.current) return;
+
     gsap.from(moonRef.current, {
       scale: 0,
       duration: 1,
