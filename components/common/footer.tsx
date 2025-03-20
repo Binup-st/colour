@@ -2,19 +2,29 @@
 
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import NavLink from "./nav-link";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Footer() {
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center justify-between px-10 md:gap-20 lg:px-52 pt-10 pb-20 border-t border-gray-500">
-        <NavLink
-          href="/"
-          className="flex whitespace-nowrap self-center font-sans"
+        <div
+          className="flex whitespace-nowrap self-center font-sans cursor-pointer"
+          onClick={() => {
+            gsap.to(window, {
+              scrollTo: { y: "#hero-section", offsetY: 100 },
+              duration: 1,
+              ease: "power2.inOut",
+            });
+          }}
         >
           <h1 className="text-5xl text-black dark:text-gray-200  font-bold">
             colours
           </h1>
-        </NavLink>
+        </div>
         <div className="text-white flex flex-col gap-4 mt-6 sm:mt-0">
           <NavLink href="https://www.instagram.com/binup_ch/">
             <div className="flex items-center gap-2">

@@ -26,7 +26,7 @@ export default function HeroSection() {
     gsap.from(headingRef.current?.querySelectorAll("span"), {
       y: 50,
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
       stagger: 0.15,
     });
   }, []);
@@ -50,7 +50,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full h-screen">
+    <div
+      id="hero-section"
+      className="relative flex flex-col items-center justify-center w-full h-screen"
+    >
       <Image
         src={background}
         alt="background"

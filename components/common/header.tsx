@@ -1,7 +1,6 @@
 "use client";
 
 import { AlignRight } from "lucide-react";
-import NavLink from "./nav-link";
 import Search from "./search";
 import ThemeToggler from "./theme-toggler";
 import { useRef, useState } from "react";
@@ -10,6 +9,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useSearch } from "@/context/search-context";
 import Categories from "./categories";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Header() {
   const { search, setSearch } = useSearch();
@@ -30,11 +32,20 @@ export default function Header() {
       className="absolute top-0 left-0 right-0 z-10 border-b-2 border-green-800 dark:border-gray-200"
     >
       <div className="flex justify-between items-center p-4 mx-auto">
-        <NavLink href="/" className="flex flex-1 lg:flex-none">
+        <div
+          className="flex flex-1 lg:flex-none"
+          onClick={() => {
+            gsap.to(window, {
+              scrollTo: { y: "#landing-page", offsetY: 100 },
+              duration: 1,
+              ease: "power2.inOut",
+            });
+          }}
+        >
           <p className="font-sans text-3xl lg:text-4xl font-extrabold text-gray-200">
             colours
           </p>
-        </NavLink>
+        </div>
         <div className="hidden lg:flex justify-center items-center gap-30">
           <Search search={search} setSearch={setSearch} />
           <div className="">
