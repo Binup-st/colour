@@ -15,35 +15,35 @@ export default function Footer() {
             colours
           </h1>
         </NavLink>
-        <div className="text-gray-200 flex flex-col gap-4 mt-6 sm:mt-0">
+        <div className="text-white flex flex-col gap-4 mt-6 sm:mt-0">
           <NavLink href="https://www.instagram.com/binup_ch/">
             <div className="flex items-center gap-2">
-              <FaInstagram className="w-6 h-6 hover:text-white cursor-pointer" />
-              <p className="text-sm hover:text-black dark:hover:text-gray-200 cursor-pointer">
+              <FaInstagram className="w-6 h-6 dark:text-white cursor-pointer" />
+              <p className="text-sm hover:text-black dark:text-white dark:hover:text-gray-200 cursor-pointer">
                 Instagram
               </p>
             </div>
           </NavLink>
           <NavLink href="https://www.linkedin.com/in/binup-chaudhary-4b2161308/">
             <div className="flex items-center gap-2">
-              <FaLinkedin className="w-6 h-6 hover:text-white cursor-pointer" />
-              <p className="text-sm hover:text-black dark:hover:text-gray-200 cursor-pointer">
+              <FaLinkedin className="w-6 h-6 dark:text-white hover:text-white cursor-pointer" />
+              <p className="text-sm hover:text-black dark:text-white dark:hover:text-gray-200 cursor-pointer">
                 Linkedin
               </p>
             </div>
           </NavLink>
           <NavLink href="https://github.com/Binup-st">
             <div className="flex items-center gap-2">
-              <FaGithub className="w-6 h-6 hover:text-white cursor-pointer" />
-              <p className="text-sm hover:text-black dark:hover:text-gray-200 cursor-pointer">
+              <FaGithub className="w-6 h-6 dark:text-white hover:text-white cursor-pointer" />
+              <p className="text-sm hover:text-black dark:text-white dark:hover:text-gray-200 cursor-pointer">
                 Github
               </p>
             </div>
           </NavLink>
           <NavLink href="https://www.facebook.com/profile.php?id=100007855427336">
             <div className="flex items-center gap-2">
-              <FaFacebook className="w-6 h-6 hover:text-white cursor-pointer" />
-              <p className="text-sm hover:text-black dark:hover:text-gray-200 cursor-pointer">
+              <FaFacebook className="w-6 h-6 dark:text-white hover:text-white cursor-pointer" />
+              <p className="text-sm hover:text-black dark:text-white dark:hover:text-gray-200 cursor-pointer">
                 Facebook
               </p>
             </div>

@@ -4,10 +4,51 @@ import background from "@/public/background.jpg";
 import Image from "next/image";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 export default function HeroSection() {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const subHeadingRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const heading = "colours";
+  const splitHeading = heading.split("");
+  const finalHeading = splitHeading.map((char, index) => (
+    <span key={index} style={{ display: "inline-block" }}>
+      {char}
+    </span>
+  ));
+
+  useGSAP(() => {
+    if (!headingRef.current) return;
+    gsap.from(headingRef.current?.querySelectorAll("span"), {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+    });
+  }, []);
+
+  useGSAP(() => {
+    if (!subHeadingRef.current) return;
+    gsap.from(subHeadingRef.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.6,
+    });
+  }, []);
+
+  useGSAP(() => {
+    if (!buttonRef.current) return;
+    gsap.from(buttonRef.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.4,
+    });
+  }, []);
+
   return (
     <div className="relative flex flex-col items-center justify-center w-full h-screen">
       <Image
@@ -21,13 +62,17 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 dark:text-gray-500"></div>
 
       <div className="absolute text-center z-10 flex flex-col justify-center items-center gap-8">
-        <h1 className="text-gray-200  text-5xl md:text-7xl font-extrabold uppercase font-sans">
-          colours
+        <h1
+          ref={headingRef}
+          className="main-heading text-gray-200  text-5xl md:text-9xl  font-extrabold uppercase font-sans"
+        >
+          {finalHeading}
         </h1>
-        <p className="text-lg text-gray-200 mt-4">
+        <p ref={subHeadingRef} className="text-lg text-gray-100 uppercase mt-4">
           Discover multiple products through our website.
         </p>
         <button
+          ref={buttonRef}
           className="cursor-pointer w-1/3 md:px-6 md:py-3 px-4 py-2 bg-gray-200 text-black font-semibold rounded-lg hover:bg-gray-200 transition duration-200"
           onClick={() => {
             gsap.to(window, {

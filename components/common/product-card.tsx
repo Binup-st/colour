@@ -2,9 +2,11 @@
 
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
-import Cart from "./cart";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Product = {
   id: string;
@@ -28,6 +30,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       delay: 0.1,
       duration: 1,
       ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: cardRef.current,
+        scroller: "body",
+        scrub: true,
+        start: "top 75%",
+        end: "top 25%",
+      },
     });
   });
 
@@ -37,8 +46,6 @@ export default function ProductCard({ product }: ProductCardProps) {
       key={product.id}
       className={`relative border-b border-r border-green-800 dark:border-gray-200 flex flex-col justify-center items-center py-10 h-full`}
     >
-      <Cart />
-
       {/* Product Image */}
       <div className="w-full flex justify-center mb-5">
         <Image
