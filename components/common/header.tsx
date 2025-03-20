@@ -42,7 +42,7 @@ export default function Header() {
             });
           }}
         >
-          <p className="font-sans text-3xl lg:text-4xl font-extrabold text-gray-200">
+          <p className="font-sans text-3xl lg:text-4xl font-extrabold text-gray-200 cursor-pointer">
             colours
           </p>
         </div>
