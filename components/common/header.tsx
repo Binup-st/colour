@@ -49,7 +49,7 @@ export default function Header() {
         <div className="hidden lg:flex justify-center items-center gap-30">
           <Search search={search} setSearch={setSearch} />
           <div className="">
-            <Categories />
+            <Categories setSidebarOpen={setSidebarOpen} />
           </div>
         </div>
 
