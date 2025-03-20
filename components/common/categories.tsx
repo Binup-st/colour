@@ -26,7 +26,7 @@ export default function Categories({
         <select
           value={category}
           onChange={(e) => handleCategoryChange(e)}
-          className="border p-2 rounded-lg bg-[#F5F5F5] dark:bg-gray-400 w-64 "
+          className="w-52 border p-2 rounded-lg bg-[#F5F5F5] dark:bg-gray-400 sm:w-64 "
         >
           <option value="all">All Categories</option>
           <option value="beauty">Beauty</option>

@@ -25,7 +25,7 @@ export default function Search({
           type="text"
           placeholder="Search"
           className={cn(
-            "hidden sm:block w-64 md:w-72 lg:w-96 border-2 focus:outline-none border-gray-300 text-gray-200 rounded-4xl pl-6 md:pl-9 pr-4 py-2 md:py-3 text-sm md:text-md font-semibold",
+            "w-52 sm:w-72 lg:w-96 border-2 focus:outline-none border-gray-300 text-gray-200 rounded-4xl pl-6 md:pl-9 pr-4 py-2 md:py-3 text-sm md:text-md font-semibold",
             className
           )}
           value={search}
