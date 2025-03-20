@@ -26,6 +26,9 @@ const fontOpenSans = FontOpenSans({
 export const metadata: Metadata = {
   title: "Colours Nepal Pvt. Ltd.",
   description: "Project Listing Website",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
