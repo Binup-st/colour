@@ -3,11 +3,16 @@
 import { useCategory } from "@/context/category-context";
 import gsap from "gsap";
 
-export default function Categories() {
+export default function Categories({
+  setSidebarOpen,
+}: {
+  setSidebarOpen: (open: boolean) => void;
+}) {
   const { category, setCategory } = useCategory();
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(e.target.value);
+    setSidebarOpen(false);
     gsap.to(window, {
       scrollTo: { y: "#landing-page", offsetY: 100 },
       duration: 1,
