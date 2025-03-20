@@ -75,6 +75,7 @@ export default function HeroSection() {
           Discover multiple products through our website.
         </p>
         <button
+          type="button"
           ref={buttonRef}
           className="cursor-pointer w-1/3 md:px-6 md:py-3 px-4 py-2 bg-gray-200 text-black font-semibold rounded-lg hover:bg-gray-200 transition duration-200"
           onClick={() => {
