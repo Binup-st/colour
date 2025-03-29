@@ -9,7 +9,7 @@ import { SearchProvider } from "@/context/search-context";
 import { CategoryProvider } from "@/context/category-context";
 import HeroSection from "@/home/hero-section";
 import Footer from "@/components/common/footer";
-import { ClientThemeProvider } from "@/components/client-theme-provider"; // Import the client-side provider
+import { ClientThemeProvider } from "@/components/client-theme-provider";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -26,9 +26,6 @@ const fontOpenSans = FontOpenSans({
 export const metadata: Metadata = {
   title: "Colours Nepal Pvt. Ltd.",
   description: "Project Listing Website",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -45,12 +42,11 @@ export default function RootLayout({
           <CategoryProvider>
             <ClientThemeProvider>
               {" "}
-              {/* Use the client-side provider */}
               <Header />
               <div className="relative z-1">
                 <HeroSection />
               </div>
-              <main className="relative -z-100">{children}</main>
+              <main className="relative">{children}</main>
               <Footer />
             </ClientThemeProvider>
           </CategoryProvider>

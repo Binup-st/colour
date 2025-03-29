@@ -53,6 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={product.title}
           width={300}
           height={300}
+          priority={product.id === "1"}
           style={{
             height: "auto",
             width: "auto",
