@@ -64,14 +64,17 @@ export default function HeroSection() {
 
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 dark:text-gray-500"></div>
 
-      <div className="absolute text-center z-10 flex flex-col justify-center items-center gap-8">
+      <div className="absolute text-center z-2 flex flex-col justify-center items-center gap-8">
         <h1
           ref={headingRef}
           className="main-heading text-gray-200  text-5xl md:text-9xl  font-extrabold uppercase font-sans"
         >
           {finalHeading}
         </h1>
-        <p ref={subHeadingRef} className="text-lg text-gray-100 uppercase mt-4">
+        <p
+          ref={subHeadingRef}
+          className="text-sm sm:text-lg text-gray-100 uppercase mt-4"
+        >
           Discover multiple products through our website.
         </p>
         <button

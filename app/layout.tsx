@@ -37,16 +37,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${fontSans.variable} ${fontOpenSans.variable} font-open-sans antialiased`}
+        suppressHydrationWarning
       >
         <SearchProvider>
           <CategoryProvider>
             <ClientThemeProvider>
               {" "}
               <Header />
-              <div className="relative z-1">
-                <HeroSection />
-              </div>
-              <main className="relative">{children}</main>
+              <main className="">{children}</main>
               <Footer />
             </ClientThemeProvider>
           </CategoryProvider>

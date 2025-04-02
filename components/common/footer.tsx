@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function Footer() {
   return (
     <div>
-      <div className="flex flex-col md:flex-row items-center justify-between px-10 md:gap-20 lg:px-52 pt-10 pb-20 border-t border-gray-500">
+      <div className="flex flex-col md:flex-row items-center justify-between px-10 md:gap-20 lg:px-52 pt-10 pb-20 border-t border-gray-500 dark:border-[#F5F5F5]">
         <div
           className="flex whitespace-nowrap self-center font-sans cursor-pointer"
           onClick={() => {
@@ -60,7 +60,7 @@ export default function Footer() {
           </NavLink>
         </div>
       </div>
-      <div className="border-t border-gray-700" />
+      <div className="border-t border-gray-700 dark:border-[#F5F5F5]" />
       <p className="container w-2/3 mx-auto flex justify-center items-center py-5">
         © 2025 Colours Pvt. Ltd. All rights reserved.
       </p>

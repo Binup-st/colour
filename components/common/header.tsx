@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import { useSearch } from "@/context/search-context";
 import Categories from "./categories";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import NavLink from "./nav-link";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -29,7 +30,7 @@ export default function Header() {
   return (
     <nav
       ref={navRef}
-      className="absolute top-0 left-0 right-0 z-10 border-b-2 border-green-800 dark:border-gray-200"
+      className="sticky top-0 left-0 right-0 z-10 border-b-2 border-green-800 dark:border-gray-200 bg-[#3e2b1b]"
     >
       <div className="flex justify-between items-center p-4 mx-auto">
         <div
@@ -42,9 +43,11 @@ export default function Header() {
             });
           }}
         >
-          <p className="font-sans text-3xl lg:text-4xl font-extrabold text-gray-200 cursor-pointer">
-            colours
-          </p>
+          <NavLink href="/">
+            <p className="font-sans text-3xl lg:text-4xl font-extrabold text-gray-200 cursor-pointer">
+              colours
+            </p>
+          </NavLink>
         </div>
         <div className="hidden lg:flex justify-center items-center gap-30">
           <Search search={search} setSearch={setSearch} />

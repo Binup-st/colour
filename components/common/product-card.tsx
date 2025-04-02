@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,7 @@ type ProductCardProps = {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useGSAP(() => {
     gsap.from(cardRef.current, {
@@ -40,11 +42,16 @@ export default function ProductCard({ product }: ProductCardProps) {
     });
   });
 
+  const handleClick = () => {
+    router.push(`/product/${product.id}`);
+  };
+
   return (
     <div
       ref={cardRef}
       key={product.id}
-      className={`relative border-b border-r border-green-800 dark:border-gray-200 flex flex-col justify-center items-center py-10 h-full`}
+      className={`relative border-b border-r border-green-800 dark:border-gray-200 flex flex-col justify-center items-center py-10 h-full cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200`}
+      onClick={handleClick}
     >
       {/* Product Image */}
       <div className="w-full flex justify-center mb-5">
