@@ -7,7 +7,6 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import { SearchProvider } from "@/context/search-context";
 import { CategoryProvider } from "@/context/category-context";
-import HeroSection from "@/home/hero-section";
 import Footer from "@/components/common/footer";
 import { ClientThemeProvider } from "@/components/client-theme-provider";
 
