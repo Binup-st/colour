@@ -7,20 +7,29 @@ import SimilarProducts from "@/components/common/similar-products";
 import RecommendedProducts from "@/components/common/recommended-products";
 import { Product } from "@/lib/products";
 
-export default async function ProductDetails({
-  params,
-}: {
-  params: { productId: string };
-}) {
-  const { productId } = await params;
+type PageProps = {
+  params: {
+    productId: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-  const baseUrl =
-    typeof window !== "undefined"
-      ? window.location.origin
-      : "http://localhost:3000";
-  const response = await fetch(`${baseUrl}/data/products.json`);
+export default async function ProductDetails({ params }: PageProps) {
+  const productId = params.productId;
 
-  const products: Product[] = await response.json();
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
+  let products: Product[] = [];
+  try {
+    const response = await fetch(`${baseUrl}/data/products.json`);
+    products = await response.json();
+  } catch (error) {
+    console.error("Error loading products:", error);
+    return notFound();
+  }
+
   const product = products.find(
     (product) => String(product.id) === String(productId)
   );
