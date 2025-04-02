@@ -14,9 +14,10 @@ export default async function ProductDetails({
 }) {
   const { productId } = await params;
 
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
+  const baseUrl =
+    process.env.NODE_ENV === "production"
+      ? "https://colour-deploy.vercel.app"
+      : "http://localhost:3000";
 
   let products: Product[] = [];
   try {
