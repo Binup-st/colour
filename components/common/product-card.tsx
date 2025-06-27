@@ -51,11 +51,11 @@ export default function ProductCard({ product }: ProductCardProps) {
     <div
       ref={cardRef}
       key={product.id}
-      className={`relative border-b border-r border-green-800 dark:border-gray-200 flex flex-col justify-center items-center py-10 h-full cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200`}
+      className={`relative border-b border-r border-green-800 dark:border-gray-200 flex flex-col justify-center items-center py-10 h-[600px] cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200`}
       onClick={handleClick}
     >
       {/* Product Image */}
-      <div className="w-full flex justify-center mb-5">
+      <div className="w-full  flex justify-center mb-5">
         <Image
           src={product.images[0]}
           alt={product.title}
@@ -82,16 +82,16 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Product Description */}
         <div
-          className="absolute -bottom-4 font-semibold text-justify px-8 py-10 text-xs sm:text-md"
+          className="absolute -bottom-4 font-semibold text-justify px-8 py-10 text-xs md:text-md"
           aria-hidden="true"
         >
-          <div className="flex items-start justify-between gap-8">
+          <div className="flex flex-col md:flex-row md:items-start items-center justify-between gap-3 md:gap-8">
             <p>{product.description}</p>
             <div className="">
               <AddToCartButton
                 product={product}
                 size="sm"
-                className="w-32 rounded-lg cursor-pointer hover:scale-102 transition-transform duration-200 h-12"
+                className="w-32 rounded-lg cursor-pointer hover:scale-102 transition-transform duration-200 h-8 md:h-12"
               />
             </div>
           </div>
