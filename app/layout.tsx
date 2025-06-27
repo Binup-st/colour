@@ -9,6 +9,7 @@ import { SearchProvider } from "@/context/search-context";
 import { CategoryProvider } from "@/context/category-context";
 import Footer from "@/components/common/footer";
 import { ClientThemeProvider } from "@/components/client-theme-provider";
+import { CartProvider } from "@/context/cart-context";
 
 const fontSans = FontSans({
   variable: "--font-sans",
@@ -40,12 +41,14 @@ export default function RootLayout({
       >
         <SearchProvider>
           <CategoryProvider>
-            <ClientThemeProvider>
-              {" "}
-              <Header />
-              <main className="">{children}</main>
-              <Footer />
-            </ClientThemeProvider>
+            <CartProvider>
+              <ClientThemeProvider>
+                {" "}
+                <Header />
+                <main className="">{children}</main>
+                <Footer />
+              </ClientThemeProvider>
+            </CartProvider>
           </CategoryProvider>
         </SearchProvider>
       </body>

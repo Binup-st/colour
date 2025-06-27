@@ -1,6 +1,6 @@
 import ProductInfo from "@/components/common/product-info";
 import Review from "@/components/common/review";
-import { Button } from "@/components/ui/button";
+import AddToCartButton from "@/components/common/add-to-cart-button";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import SimilarProducts from "@/components/common/similar-products";
@@ -88,8 +88,10 @@ export default async function ProductDetails({
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             {product.description}
           </p>
-          <p className="text-2xl font-bold text-red-500">${product.price}</p>
-          <Button className="mt-7 w-52">Add to Cart</Button>
+          <p className="text-2xl font-bold text-red-500 mb-6">
+            ${product.price}
+          </p>
+          <AddToCartButton product={product} size="lg" className="w-52" />
         </div>
       </div>
 

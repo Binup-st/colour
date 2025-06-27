@@ -6,6 +6,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
+import AddToCartButton from "./add-to-cart-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +85,16 @@ export default function ProductCard({ product }: ProductCardProps) {
           className="absolute -bottom-4 font-semibold text-justify px-8 py-10 text-xs sm:text-md"
           aria-hidden="true"
         >
-          <p>{product.description}</p>
+          <div className="flex items-start justify-between gap-8">
+            <p>{product.description}</p>
+            <div className="">
+              <AddToCartButton
+                product={product}
+                size="sm"
+                className="w-32 rounded-lg cursor-pointer hover:scale-102 transition-transform duration-200 h-12"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
