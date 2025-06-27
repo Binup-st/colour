@@ -46,7 +46,7 @@ export default function SimilarProducts({
                   onClick={() => handleClick(item.id)}
                 >
                   <div className="p-6 flex justify-center">
-                    <Card className="w-80 cursor-pointer transition hover:scale-110 hover:shadow-2xl duration-500 ease-in-out">
+                    <Card className="w-80 cursor-pointer transition hover:scale-110 hover:shadow-2xl duration-500 ease-in-out dark:bg-[#F5F2E1]">
                       <CardContent className="relative flex aspect-square items-center justify-center">
                         <Image
                           src={item.images?.[0] || "/placeholder.jpg"}
@@ -62,7 +62,7 @@ export default function SimilarProducts({
                           className="my-2 mt-5 sm:my-10"
                         />
                         <div className="absolute bottom-0 mt-5 sm:mt-10 w-full flex mx-auto justify-between items-center px-5">
-                          <h3 className="text-xs font-bold w-2/3">
+                          <h3 className="text-xs font-bold w-2/3 dark:text-black">
                             {item.title}
                           </h3>
                           <p className="text-red-500 text-xl sm:text-2xl font-sans">

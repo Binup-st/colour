@@ -25,10 +25,10 @@ export default function Sidebar({
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <div
         ref={sidebarRef}
-        className="absolute flex flex-col z-20 items-center gap-10 w-screen sm:w-86 h-screen bg-[#646F58] dark:bg-gray-800 top-0 right-0 shadow-xl"
+        className="fixed flex flex-col z-20 items-center gap-10 w-screen sm:w-86 h-screen bg-[#646F58] dark:bg-gray-800 top-0 right-0 shadow-xl overflow-y-auto"
       >
         <CircleX
           className="absolute w-8 h-8 top-4 right-4 text-white dark:text-gray-200 cursor-pointer transition transform duration-200 ease-in-out hover:rotate-90"
